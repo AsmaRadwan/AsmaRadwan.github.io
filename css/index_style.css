@@ -1,0 +1,137 @@
+body{font-family: 'Roboto', sans-serif;}
+#home{
+    background-image: url(../images/slider/slider-01.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+}
+nav a{color: #FF305B !important;}
+nav li a:hover{color: #FF305B !important;}
+.homepage{height: 75%;}
+.homepage h1{
+    font-size: 70px;
+    font-weight: 700;
+    color: #FF305B;
+}
+.homepage p{
+    font-size: 26px;
+    font-weight: 300;
+}
+.about_pic{
+    position: relative;
+    border: solid #555 5px;
+    border-radius: 10px;
+    width: auto;
+}
+.pic_border{
+    transform: translateX(15px) translateY(15px);
+    overflow: hidden;
+    position: relative;
+    width: auto;
+}
+.pic_border img{
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.pic_border i:hover{color: #FF305B !important;}
+.portfolio-item{
+    overflow: hidden;
+    position: relative;
+}
+.overlay2{
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+.about_pic:hover .overlay2, .portfolio-item:hover .overlay2{
+    visibility: visible;
+    height: 100%;
+    opacity: 1;
+    top: 0;
+}
+.about-data .data{border-bottom: 1px dashed #555;}
+.about-data button {background-color: #FF305B !important;}
+
+#services , #counters , .feedback , #blog {background-color: #F1F1F1;}
+
+#services h2, #portfolio h2, #counters h2, #testnomial h2, #blog h2, #contact h2 , .services, .blog , .portfolio , .testnomial , .contact{position: relative;}
+#services h2:before , #portfolio h2:before , #testnomial h2:before, #blog h2:before, #contact h2:before{
+    content: "";
+    background-color: #FF305B;
+    position: absolute;
+    top: 96%;
+    left: 47%;
+    width: 70px;
+    height: 0.5px;
+}
+#services h2:after , #portfolio h2:after , #testnomial h2:after , #blog h2:after , #contact h2:after{
+    content: "";
+    background-color: #FF305B;
+    position: absolute;
+    top: 100%;
+    left: 43%;
+    width: 160px;
+    height: 0.5px;
+}
+.services:before , .portfolio:before , .testnomial:before , .blog:before , .contact:before{
+    content: "";
+    background-color: #FF305B;
+    position: absolute;
+    top: -5;
+    left: 47%;
+    width: 70px;
+    height: 0.5px;
+}
+.service i{
+    font-size: 30px;
+    color: #FF305B;
+    transition: all 0.5s;
+}
+.service:hover .service i {transform: scale(1.3,1.3);}
+.service:hover {background-color: #FFF;}
+.portfolio .nav-item .active {color: #FF305B !important;}
+.portfolio .nav-item a:focus {color: #FF305B !important;}
+.portfolio-item:hover{cursor: pointer;}
+.portfolio-item .overlay2 i {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #FF305B;
+    font-size: 22px;
+}
+.modal-content button{
+    position: absolute;
+    top: 5px;
+    right:5px;
+}
+.modal-body i {
+    color: #FF305B;
+    font-size: small;
+}
+.modal-body i:hover{color: #FF305B !important;}
+.counter-item i {color: #FF305B;}
+.feedback{
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.feedback:before{
+    content: "";
+    position: absolute;
+    bottom: 75%;
+    right: 82%;
+    width: 50%;
+    height: 100%;
+    background-color: #FF305B;
+    transform: rotate(45deg);
+}
+
