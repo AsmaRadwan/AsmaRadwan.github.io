@@ -1,10 +1,10 @@
 const instance = new TypeIt('#replaceStrings', {
-  strings: ['developer'],
+  strings: ['analyst '],
   //-- Other options...
 }).go();
 
 new TypeIt('#replaceStrings', {
-  strings: ["Developer", "Designer"],
+  strings: ["Analyst ", "Scientist"],
   speed: 50,
   loop: true,
   breakLines: false,
