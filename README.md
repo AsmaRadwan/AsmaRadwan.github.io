@@ -1,2 +1,2 @@
-# Fokir
-Personal Portfolio (HTML-CSS-JS-JQuery-Bootstrap) Template
+# Portfolio
+Personal Portfolio (HTML-CSS-JS-JQuery-Bootstrap) 
