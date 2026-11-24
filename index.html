@@ -1,744 +1,575 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/swiper.min.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/index_style.css" />
-    <title>Asma Radwan Personal Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asma Radwan — Data Analytics Engineer</title>
+  <meta name="description" content="Asma Radwan — Data Analytics Engineer in Alexandria, Egypt. Python, SQL, Power BI, ETL pipelines, data modeling and machine learning." />
+  <meta name="author" content="Asma Radwan" />
+  <meta name="theme-color" content="#fbfaf9" />
+  <link rel="canonical" href="https://asmaradwan.github.io/" />
+
+  <!-- Open Graph (link previews on LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Asma Radwan — Data Analytics Engineer" />
+  <meta property="og:description" content="From raw data to pipelines, dashboards and predictive models." />
+  <meta property="og:url" content="https://asmaradwan.github.io/" />
+  <meta property="og:image" content="https://asmaradwan.github.io/images/about/profile-900.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23be123c'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' fill='white' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E" />
+
+  <!-- Apply the saved / system theme before first paint (prevents a flash) -->
+  <script>
+    (function () {
+      var chosen = localStorage.getItem("theme-chosen") && localStorage.getItem("theme");
+      var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", chosen || (dark ? "dark" : "light"));
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <section id="home">
-        <div class="overlay">
-            <nav class="navbar navbar-expand-sm navbar-dark bg-transparent mx-5 px-5">
-                <a class="navbar-brand mx-5 px-5 font-weight-bold" href="#">Asma`s Portfolio</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse mx-5 px-5" id="collapsibleNavId">
-                    <ul class="navbar-nav ml-auto px-5">
-                        <li class="nav-item p-1">
-                            <a class="nav-link text-white" href="#">Home</a>
-                        </li>
-                        <li class="nav-item p-1">
-                            <a class="nav-link text-white" href="#about">About</a>
-                        </li>
-                        <li class="nav-item p-1">
-                            <a class="nav-link text-white" href="#services">Services</a>
-                        </li>
-                        <li class="nav-item p-1">
-                            <a class="nav-link text-white" href="#">Portfolio</a>
-                        </li>
-                        <li class="nav-item p-1">
-                            <a class="nav-link text-white" href="#">Testnomial</a>
-                        </li>
-                        <li class="nav-item p-1 text-white">
-                            <a class="nav-link text-white" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div
-                class="homepage container p-5 text-center text-white d-flex flex-column justify-content-center align-items-center justify-space-around">
-                <h5 class="font-weight-bold">Hello , I'm</h5>
-                <h1>ASMA RADWAN</h1>
-                <p class="font-weight-lighter">
-                    Data <span id="replaceStrings"></span>
-                </p>
-            </div>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Asma<span>.</span></a>
+      <nav aria-label="Main">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+          <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+        </button>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="status-pill"><span class="dot"></span> Open to opportunities &amp; freelance work</div>
+          <h1>Hi, I'm <span class="accent">Asma Radwan</span></h1>
+          <p class="hero-role">I'm a <span class="typed" id="typed">Data Analytics Engineer</span><span class="caret" aria-hidden="true"></span></p>
+          <p class="hero-text">
+            I own the full data lifecycle: building ingestion pipelines, modelling schemas,
+            and turning the results into dashboards and predictive models that drive real decisions.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#contact"><i class="fas fa-paper-plane"></i> Hire me</a>
+            <a class="btn btn-ghost" href="CV/Asma_Radwan_CV.pdf" download><i class="fas fa-download"></i> Download CV</a>
+          </div>
+          <div class="socials">
+            <a class="icon-btn" href="https://www.linkedin.com/in/asmaradwan" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a class="icon-btn" href="https://github.com/AsmaRadwan" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a class="icon-btn" href="mailto:asma.magdy.hamed@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a class="icon-btn" href="https://wa.me/201121380001" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </div>
+
+        <div class="hero-photo">
+          <div class="frame">
+            <img src="images/about/profile-900.jpg" alt="Portrait of Asma Radwan" width="720" height="900" fetchpriority="high" />
+          </div>
+          <div class="float-card two"><i class="fas fa-graduation-cap"></i>
+            <div><strong>3.97 GPA</strong><span>CS &amp; AI</span></div>
+          </div>
+          <div class="float-card one"><i class="fas fa-chart-line"></i>
+            <div><strong>94% accuracy</strong><span>ARIMA forecasting</span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="about">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-4">
-                    <div class="about_pic">
-                        <div class="pic_border">
-                            <img class="img-fluid" src="images/about/profile.jpg" />
-                            <div class="overlay2 ">
-                                <div class="d-flex justify-content-center align-items-center h-100 my-auto">
-                                    <a href="https://www.facebook.com/"><i
-                                            class="fab fa-facebook-f text-white m-2"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter text-white m-2"></i></a>
-                                    <a href="https://www.google.com/"><i class="fab fa-google text-white m-2"></i></a>
-                                    <a href="https://www.github.com/"><i class="fab fa-github text-white m-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-6">
-                    <div class="about-data">
-                        <h2 class="font-weight-bolder">HELLO ,</h2>
-                        <p class="text-muted pb-3 data">
-                        I’m a Data Analyst with hands-on experience through professional trainings 
-                        and over 10 real-world projects across various domains. I believe every number tells a story, 
-                        and my mission is to uncover that story and present it in a way that drives smart, strategic 
-                        decision-making. 
-                        I’m known for my discipline, on-time delivery, and high-quality results. I’m flexible, easy to 
-                        communicate with, and skilled at managing my time to meet deadlines without compromising quality. 
-                        Whether you’re looking for in-depth data analysis, interactive dashboards using Power BI or 
-                        Tableau, or business reports that give you a clear view of the big picture, I’m here to deliver 
-                        custom solutions built on a deep understanding of your goals. 
-                        Let’s turn your data into a real business advantage.   
-                        </p>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="list1">
-                                    <p class="py-1 font-weight-bold">
-                                        Name:
-                                        <span class="text-muted font-weight-light">Asma Radwan</span>
-                                    </p>
-                                    <p class="py-1 font-weight-bold">
-                                        Age:
-                                        <span class="text-muted font-weight-light">20 Years</span>
-                                    </p>
-                                    <p class="py-1 font-weight-bold">
-                                        Freelance:
-                                        <span class="text-muted font-weight-light">Available</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="list1">
-                                    <p class="py-1 font-weight-bold">
-                                        Job Title:
-                                        <span class="text-muted font-weight-light">Data Analyst</span>
-                                    </p>
-                                    <p class="py-1 font-weight-bold">
-                                        Location:
-                                        <span class="text-muted font-weight-light">Alexandria, Egypt</span>
-                                    </p>
-                                    <p class="py-1 font-weight-bold">
-                                        Email:
-                                        <span class="text-muted font-weight-light">asma.magdy.hamed@gmail.com</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="CV\AsmaRadwanCV.pdf" download>
-                            <button class="btn btn-danger py-2 px-3 mx-3">
-                                Download CV <i class="fas fa-download m-1"></i>
-                            </button>
-                        </a>
-                        
-                        <button class="btn btn-danger py-2 px-3 p-2 mx-3">
-                            Hire Me <i class="fas fa-paper-plane m-1"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section-alt">
+      <div class="container">
+        <span class="eyebrow">About me</span>
+        <h2 class="section-title">Every number tells a story</h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a Data Analytics Engineer who works across the whole pipeline, from Python ETL and SQL data
+              modelling to Power BI dashboards and machine-learning models. I've done this in a startup
+              (Revelio), on a large-scale streaming platform (STC TV), and in research and teaching roles.
+            </p>
+            <p>
+              Today I teach as well: I'm a Teaching Assistant for the Data Science major at Pharos University
+              and a Data Analysis Instructor at EraaSoft, where I've mentored cohorts through end-to-end
+              capstone projects.
+            </p>
+            <p>
+              People know me for discipline, on-time delivery and clear communication. Whether you need a data
+              pipeline, a data warehouse, an interactive dashboard or a forecasting model, I build solutions
+              around your actual business goals.
+            </p>
+          </div>
+          <ul class="facts reveal">
+            <li><span>Name</span><span>Asma Radwan</span></li>
+            <li><span>Role</span><span>Data Analytics Engineer</span></li>
+            <li><span>Location</span><span>Alexandria, Egypt</span></li>
+            <li><span>Email</span><span><a href="mailto:asma.magdy.hamed@gmail.com">asma.magdy.hamed@gmail.com</a></span></li>
+            <li><span>Freelance</span><span>Available</span></li>
+          </ul>
         </div>
+
+        <div class="stats">
+          <div class="stat reveal"><strong>10+</strong><span>Data projects delivered</span></div>
+          <div class="stat reveal"><strong>11.5K+</strong><span>Users' behaviour analysed at STC TV</span></div>
+          <div class="stat reveal"><strong>94%</strong><span>Forecasting model accuracy</span></div>
+          <div class="stat reveal"><strong>6</strong><span>Professional certifications</span></div>
+        </div>
+      </div>
     </section>
 
+    <!-- ================= SERVICES ================= -->
     <section id="services">
-        <div class="container text-center py-5">
-            <h2 class="font-weight-bolder py-3">Our Services</h2>
-            <div class="services py-4">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="service text-center py-3">
-                            <i class="fas fa-pencil-ruler m-2"></i>
-                            <h5 class="font-weight-bold my-3">DATA MODELING & DATABASE DESIGN</h5>
-                            <p class="px-1 text-muted">
-                                Design efficient data models and create entity relationship diagrams (ERD) to support robust database systems.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="service text-center py-3">
-                            <i class="fas fa-laptop-code m-2"></i>
-                            <h5 class="font-weight-bold my-3">DATA CLEANING</h5>
-                            <p class="px-1 text-muted">
-                                Ensure data accuracy and consistency by handling missing values, outliers, and formatting issues for optimal analysis.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="service text-center py-3">
-                            <i class="fas fa-chart-line m-2"></i>
-                            <h5 class="font-weight-bold my-3">DASHBOARDS & VISUALIZATION</h5>
-                            <p class="px-1 text-muted">
-                                Create interactive dashboards and compelling data visualizations using tools like Power BI, Tableau, and Python libraries.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="service text-center py-3">
-                            <i class="fas fa-cogs m-2"></i>
-                            <h5 class="font-weight-bold my-3">ML & DL MODELS</h5>
-                            <p class="px-1 text-muted">
-                                Build, train, and deploy predictive models using machine learning techniques to extract actionable insights from data.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <span class="eyebrow">What I do</span>
+        <h2 class="section-title">Services</h2>
+        <p class="section-lead">End-to-end data work, from the first raw file to the final decision.</p>
+        <div class="cards-4">
+          <article class="card reveal">
+            <div class="icon"><i class="fas fa-stream"></i></div>
+            <h3>Data Engineering &amp; ETL</h3>
+            <p>Python &amp; SSIS pipelines, real-time ingestion, Parquet, Docker and AWS deployments.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><i class="fas fa-database"></i></div>
+            <h3>Data Modeling &amp; Warehousing</h3>
+            <p>Star schemas, data marts and ERDs on SQL Server, PostgreSQL and MySQL, built for fast queries.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><i class="fas fa-chart-pie"></i></div>
+            <h3>Dashboards &amp; BI</h3>
+            <p>Interactive Power BI (DAX, M), Tableau and Excel dashboards with clear data storytelling.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><i class="fas fa-brain"></i></div>
+            <h3>ML &amp; Forecasting</h3>
+            <p>Time-series forecasting, recommendation engines, clustering and deep-learning models.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section id="portfolio">
-        <div class="container text-center py-5">
-            <h2 class="font-weight-bolder py-3">My Portfolio</h2>
-            <div class="portfolio py-4">
-                <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item bg-transparent text-danger">
-                        <a class="nav-link active bg-transparent text-dark" id="pills-all-tab" data-toggle="pill"
-                            href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="true">All Dashboards</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-transparent text-dark" id="pills-Excel-tab" data-toggle="pill"
-                            href="#pills-Excel" role="tab" aria-controls="pills-Excel"
-                            aria-selected="false">Excel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-transparent text-dark" id="pills-Power BI-tab" data-toggle="pill"
-                            href="#pills-Power BI" role="tab" aria-controls="pills-Power BI" aria-selected="false">Power BI</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-transparent text-dark" id="pills-Tableau-tab" data-toggle="pill"
-                            href="#pills-Tableau" role="tab" aria-controls="pills-Tableau"
-                            aria-selected="false">Tableau</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel"
-                        aria-labelledby="pills-all-tab">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="portfolio-item">
-                                    <img class="img-fluid" src="images/portfolio/1.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal1">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <div id="carouselExampleControls" class="carousel slide"
-                                                        data-ride="carousel">
-                                                        <div class="carousel-inner">
-                                                            <div class="carousel-item active">
-                                                                <img src="images/portfolio/1.png" class="d-block w-100">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="images/portfolio/4.png" class="d-block w-100">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="images/portfolio/6.png" class="d-block w-100">
-                                                            </div>
-                                                        </div>
-                                                        <a class="carousel-control-prev" href="#carouselExampleControls"
-                                                            role="button" data-slide="prev">
-                                                            <span class="carousel-control-prev-icon"
-                                                                aria-hidden="true"></span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                        <a class="carousel-control-next" href="#carouselExampleControls"
-                                                            role="button" data-slide="next">
-                                                            <span class="carousel-control-next-icon"
-                                                                aria-hidden="true"></span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience" class="section-alt">
+      <div class="container">
+        <span class="eyebrow">Career</span>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-lead">Engineering, analytics and teaching roles, most recent first.</p>
 
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/2.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal2">
-                                        <i class="fas fa-link"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title text-danger" id="exampleModalLabel">Goodreads Book Review Dashboard
-                                                    </h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body text-left">
-                                                    <img class="img-fluid" src="images/portfolio/2.png">
-                                                    <p class="text-muted my-2">This interactive dashboard provides insightful visualizations on Goodreads book reviews. 
-                                                        It analyzes star ratings, publication trends, top-reviewed books, and author performance, 
-                                                        offering a deep dive into reader engagement and author popularity.</p>
-                                                    <div class="row mx-1">
-                                                        <i class="fa fa-user mr-2 pt-1"></i>
-                                                        <p>NTI Team</p>
-                                                    </div>
-                                                    <div class="row mx-1">
-                                                        <i class="fa fa-clock mr-2 pt-1"></i>
-                                                        <p>1 Week</p>
-                                                    </div>
-                                                    <div class="row mx-1">
-                                                        <i class="fa fa-dollar-sign mr-2 pt-1"></i>
-                                                        <p>$20</p>
-                                                    </div>
-                                                    <div class="row mx-1">
-                                                        <i class="fa fa-globe mr-2 pt-1"></i>
-                                                        <a href="#">https://github.com/AsmaRadwan/GoodReads-Project</a>
-                                                    </div>
-                                                    <div class="row m-1">
-                                                        <i class="fa fa-calendar mr-2 pt-1"></i>
-                                                        <p>1 August 2025</p>
-                                                    </div>
-                                                    <h4>Share</h4>
-                                                    <div class="row mx-2">
-                                                        <i class="fab fa-facebook m-2 fa-3x text-dark"></i>
-                                                        <i class="fab fa-twitter m-2 text-dark"></i>
-                                                        <i class="fab fa-dribbble m-2 text-dark"></i>
-                                                        <i class="fab fa-github m-2 text-dark"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/3.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal3">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <iframe width="100%" height="315"
-                                                        src="https://www.youtube.com/embed/M6L-nZGIUTE" frameborder="0"
-                                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowfullscreen></iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/4.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal4">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <div id="carouselExampleControls" class="carousel slide"
-                                                        data-ride="carousel">
-                                                        <div class="carousel-inner">
-                                                            <div class="carousel-item active">
-                                                                <img src="images/portfolio/4.png" class="d-block w-100">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="images/portfolio/6.png" class="d-block w-100">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="images/portfolio/1.png" class="d-block w-100">
-                                                            </div>
-                                                        </div>
-                                                        <a class="carousel-control-prev" href="#carouselExampleControls"
-                                                            role="button" data-slide="prev">
-                                                            <span class="carousel-control-prev-icon"
-                                                                aria-hidden="true"></span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                        <a class="carousel-control-next" href="#carouselExampleControls"
-                                                            role="button" data-slide="next">
-                                                            <span class="carousel-control-next-icon"
-                                                                aria-hidden="true"></span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/5.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal5">
-                                        <i class="fas fa-link"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title text-danger" id="exampleModalLabel">Project
-                                                        Name</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body text-left">
-                                                    <img class="img-fluid" src="images/portfolio/5.png">
-                                                    <p class="text-muted my-2">Lorem ipsum dolor sit amet, consectetur
-                                                        adipisicing elit. Ab perspiciatis et, voluptas esse ex expedita
-                                                        atque. Impedit porro eveniet, culpa rerum in doloremque velit
-                                                        perspiciatis doloribus ratione. Nobis, nisi, quasi.</p>
-                                                    <div class="row mx-1">
-                                                        <i class="fa fa-user mr-2 pt-1"></i>
-                                                        <p>alex smith</p>
-                                                    </div>
-                                                    <div class="row mx-1">
-                                                        <i class="fa fa-globe mr-2 pt-1"></i>
-                                                        <a href="#">www.example.com</a>
-                                                    </div>
-                                                    <div class="row m-1">
-                                                        <i class="fa fa-calendar mr-2 pt-1"></i>
-                                                        <p>12 June 2018</p>
-                                                    </div>
-                                                    <h4>Share</h4>
-                                                    <div class="row mx-2">
-                                                        <i class="fab fa-facebook m-2 fa-3x text-dark"></i>
-                                                        <i class="fab fa-twitter m-2 text-dark"></i>
-                                                        <i class="fab fa-dribbble m-2 text-dark"></i>
-                                                        <i class="fab fa-github m-2 text-dark"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/6.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal6">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <div id="carouselExampleControls" class="carousel slide"
-                                                        data-ride="carousel">
-                                                        <div class="carousel-inner">
-                                                            <div class="carousel-item active">
-                                                                <img src="images/portfolio/6.png" class="d-block w-100">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="images/portfolio/1.png" class="d-block w-100">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="images/portfolio/4.png" class="d-block w-100">
-                                                            </div>
-                                                        </div>
-                                                        <a class="carousel-control-prev" href="#carouselExampleControls"
-                                                            role="button" data-slide="prev">
-                                                            <span class="carousel-control-prev-icon"
-                                                                aria-hidden="true"></span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                        <a class="carousel-control-next" href="#carouselExampleControls"
-                                                            role="button" data-slide="next">
-                                                            <span class="carousel-control-next-icon"
-                                                                aria-hidden="true"></span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-Excel" role="tabpane2" aria-labelledby="pills-Excel-tab">
-                        <div class="row">
-                    
-                            <!-- Image 2 -->
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/2.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal2">
-                                        <i class="fas fa-link"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title text-danger">Excel Dashboard 2</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body text-left">
-                                                    <img class="img-fluid" src="images/portfolio/2.png">
-                                                    <p class="text-muted my-2">Description for Excel dashboard image 2.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Image 6 -->
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/6.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal6">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <div id="carouselExampleControls6" class="carousel slide" data-ride="carousel">
-                                                        <div class="carousel-inner">
-                                                            <div class="carousel-item active">
-                                                                <img src="images/portfolio/6.png" class="d-block w-100">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img src="images/portfolio/1.png" class="d-block w-100">
-                                                            </div>
-                                                        </div>
-                                                        <a class="carousel-control-prev" href="#carouselExampleControls6" role="button" data-slide="prev">
-                                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                        <a class="carousel-control-next" href="#carouselExampleControls6" role="button" data-slide="next">
-                                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Image 1 -->
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/1.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal1">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <img src="images/portfolio/1.png" class="d-block w-100">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                        </div>
-                    </div>
-                
-                    <div class="tab-pane fade" id="pills-Power-BI" role="tabpane3" aria-labelledby="pills-Power-BI-tab">
-                        <div class="row">
-                            <!-- Image 3.png -->
-                            <div class="col-md-6">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/3.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#modalPowerBI3">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <div class="modal fade" id="modalPowerBI3" tabindex="-1" role="dialog" aria-labelledby="modalLabel3" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Power BI Dashboard</h5>
-                                                    <button type="button" class="close" data-dismiss="modal">
-                                                        <span>&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <img class="img-fluid" src="images/portfolio/3.png" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Image 4.png -->
-                            <div class="col-md-6">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/4.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#modalPowerBI4">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <div class="modal fade" id="modalPowerBI4" tabindex="-1" role="dialog" aria-labelledby="modalLabel4" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Power BI Report</h5>
-                                                    <button type="button" class="close" data-dismiss="modal">
-                                                        <span>&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <img class="img-fluid" src="images/portfolio/4.png" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills-Tableau" role="tabpane4" aria-labelledby="pills-Tableau-tab">
-                        <div class="row">
-                    
-                            <!-- Tableau Image 5 -->
-                            <div class="col-md-4">
-                                <div class="portfolio-item p-2">
-                                    <img class="img-fluid" src="images/portfolio/5.png" />
-                                    <div class="overlay2" data-toggle="modal" data-target="#exampleModal5">
-                                        <i class="far fa-file-image"></i>
-                                    </div>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title text-danger">Tableau Dashboard</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body text-left">
-                                                    <img class="img-fluid" src="images/portfolio/5.png">
-                                                    <p class="text-muted my-2">This Tableau dashboard provides key insights and visual analytics.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                        </div>
-                    </div>
-                    
-    </section>
-
-    <section id="testnomial">
-        <div class="container w-50 text-center py-5">
-            <h2 class="font-weight-bolder py-3">Testimonial</h2>
-            <div class="testnomial py-5 justify-content-center">
-                <div class="feedback row">
-                    <div class="col-md-3">
-                        <div class="client-img m-3 py-3">
-                            <img class="img-fluid rounded-circle" src="images/testimonial/2.jpeg" />
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="client-feedback text-left py-3 m-3">
-                            <h5 class="font-weigh-bolder">Abdallah Khaled</h5>
-                            <span class="text-muted my-3"><i class="fa fa-location-arrow mx-2"></i>Egypt</span>
-                            <p class="text-muted font-italic">
-                                Asma’s analytical thinking and attention to detail stood out from day one. She took raw, unorganized data and transformed it into clear dashboards and powerful insights that impressed both our mentors and peers.
-                            </p>
-                            <p class="text-muted font-italic">
-                                Team Lead, DEPI Program
-                            </p>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star-o" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3>Teaching Assistant, Data Science Major <span class="badge">Current</span></h3>
+                <span class="tl-meta">Sep 2026 – Present · Hybrid</span>
+              </div>
+              <div class="tl-org">Pharos University</div>
             </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3>Data Analysis Instructor <span class="badge">Current</span></h3>
+                <span class="tl-meta">Sep 2026 – Present · Hybrid</span>
+              </div>
+              <div class="tl-org">EraaSoft</div>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3>Data Analysis Mentor</h3>
+                <span class="tl-meta">Aug 2025 – Present · Hybrid</span>
+              </div>
+              <div class="tl-org">EraaSoft</div>
+              <ul>
+                <li>Led practice sessions on end-to-end analysis workflows with Python, SQL, Excel and Power BI.</li>
+                <li>Evaluated student projects with structured feedback that raised quality across cohorts.</li>
+                <li>Guided capstone projects from scoping to delivery using industry-standard tools.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3>Data Analytics Engineer</h3>
+                <span class="tl-meta">Oct 2025 – Apr 2026 · Remote</span>
+              </div>
+              <div class="tl-org">Revelio (Startup)</div>
+              <ul>
+                <li>Owned data engineering and BI deliverables end-to-end across real-estate and healthcare analytics.</li>
+                <li>Built Python ETL pipelines for real-time ingestion of the Hospital Quality of Care dataset into Parquet.</li>
+                <li>Designed SQL data models for real-estate analytics, ensuring integrity and query performance.</li>
+                <li>Delivered Power BI dashboards and Excel reports on market trends to internal stakeholders.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item reveal">
+            <div class="tl-card">
+              <div class="tl-head">
+                <h3>Data Scientist Intern</h3>
+                <span class="tl-meta">Aug 2024 · Remote, Saudi Arabia</span>
+              </div>
+              <div class="tl-org">STC TV</div>
+              <ul>
+                <li>Analysed behavioural data from 11,500+ users to uncover engagement and content-consumption patterns.</li>
+                <li>Built an ARIMA time-series model with 94% accuracy to forecast viewership and guide content strategy.</li>
+                <li>Developed a content-based recommendation engine to personalise the experience at scale.</li>
+                <li>Presented insights to STC TV stakeholders through structured data storytelling.</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="contact">
-        <div class="container text-center py-5">
-            <h2 class="font-weight-bolder py-3">Contact Me</h2>
-            <div class="contact py-4">
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="forrm-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input class="form-control p-3 my-2" placeholder="Name" />
-                                </div>
-                                <div class="col-md-6">
-                                    <input class="form-control p-3 m-2" placeholder="Email" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <input class="form-control p-3 m-2" placeholder="Subject" />
-                            </div>
-                            <div class="row">
-                                <textarea class="form-control p-3 m-2" rows="5" placeholder="Message for us"></textarea>
-                            </div>
-                            <button class="btn btn-danger p-2 my-2 float-left">
-                                Send Message
-                            </button>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ================= SKILLS ================= -->
+    <section id="skills">
+      <div class="container">
+        <span class="eyebrow">Toolbox</span>
+        <h2 class="section-title">Technical skills</h2>
+        <p class="section-lead">The languages, platforms and libraries I use day to day.</p>
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3><i class="fas fa-code"></i> Languages</h3>
+            <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">DAX</span><span class="chip">M Language</span></div>
+          </div>
+          <div class="skill-group reveal">
+            <h3><i class="fas fa-chart-bar"></i> Analysis &amp; Visualization</h3>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Excel</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Plotly</span></div>
+          </div>
+          <div class="skill-group reveal">
+            <h3><i class="fas fa-cogs"></i> Data Engineering</h3>
+            <div class="chips"><span class="chip">ETL Pipeline Design</span><span class="chip">Real-Time Ingestion</span><span class="chip">SSIS</span><span class="chip">Databricks</span><span class="chip">Docker</span><span class="chip">AWS</span></div>
+          </div>
+          <div class="skill-group reveal">
+            <h3><i class="fas fa-brain"></i> Data Science &amp; ML</h3>
+            <div class="chips"><span class="chip">Scikit-learn</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">ARIMA / Time Series</span><span class="chip">Feature Engineering</span></div>
+          </div>
+          <div class="skill-group reveal">
+            <h3><i class="fas fa-database"></i> Databases</h3>
+            <div class="chips"><span class="chip">SQL Server</span><span class="chip">PostgreSQL (Supabase)</span><span class="chip">MySQL</span><span class="chip">Oracle</span></div>
+          </div>
+          <div class="skill-group reveal">
+            <h3><i class="fas fa-tools"></i> Developer Tools</h3>
+            <div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">Jupyter Notebook</span><span class="chip">Docker</span></div>
+          </div>
         </div>
+      </div>
     </section>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/typeit.min.js"></script>
-    <script src="js/swiper.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/index.js"></script>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="section-alt">
+      <div class="container">
+        <span class="eyebrow">Selected work</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-lead">Data engineering, machine learning and dashboards. Click a screenshot to enlarge it.</p>
+
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="eng" aria-pressed="false">Engineering &amp; ML</button>
+          <button class="filter" type="button" data-filter="powerbi" aria-pressed="false">Power BI</button>
+          <button class="filter" type="button" data-filter="tableau" aria-pressed="false">Tableau</button>
+          <button class="filter" type="button" data-filter="excel" aria-pressed="false">Excel</button>
+        </div>
+
+        <div class="projects">
+          <!-- Engineering & ML -->
+          <article class="project" data-cat="eng">
+            <div class="project-cover" aria-hidden="true"><i class="fas fa-futbol"></i></div>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Python</span><span class="tag">Supabase</span><span class="tag">Docker</span><span class="tag">AWS</span></div>
+              <h3>Offside: Football Analytics Platform</h3>
+              <p>Graduation project. A full data pipeline with Python ingestion, PostgreSQL (Supabase) relational schemas for match, player and event data, and Dockerized services on AWS that power real-time dashboards.</p>
+              <div class="project-links"><a href="https://github.com/AsmaRadwan/Offside-Graduation-Project" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a></div>
+            </div>
+          </article>
+
+          <article class="project" data-cat="eng">
+            <div class="project-cover" aria-hidden="true"><i class="fas fa-cubes"></i></div>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">SQL Server</span><span class="tag">SSIS</span><span class="tag">Data Warehouse</span></div>
+              <h3>Sales Data Mart</h3>
+              <p>Designed and implemented a star-schema data warehouse, populated by an SSIS ETL package that moves data from the OLTP database into the DWH.</p>
+            </div>
+          </article>
+
+          <article class="project" data-cat="eng">
+            <div class="project-cover" aria-hidden="true"><i class="fas fa-tv"></i></div>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Python</span><span class="tag">ARIMA</span><span class="tag">Recommender</span></div>
+              <h3>STC TV: Enhancing User Engagement</h3>
+              <p>Engagement analysis of 11,500+ users, viewership forecasting with 94% accuracy, and a content-based recommendation engine.</p>
+              <div class="project-links"><a href="https://github.com/AsmaRadwan/STC-TV-Enhancing-User-Engagement" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a></div>
+            </div>
+          </article>
+
+          <article class="project" data-cat="eng powerbi">
+            <div class="project-cover" aria-hidden="true"><i class="fas fa-seedling"></i></div>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Python</span><span class="tag">Clustering</span><span class="tag">Power BI</span></div>
+              <h3>Climate Change Impact on Agriculture</h3>
+              <p>Studied how climate affects crop yield using clustering and feature-importance analysis, with the findings presented in a Power BI report.</p>
+              <div class="project-links"><a href="https://github.com/AsmaRadwan/climate_change_impact_on_agriculture_2024" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a></div>
+            </div>
+          </article>
+
+          <!-- Power BI -->
+          <article class="project" data-cat="powerbi">
+            <button class="project-thumb" type="button" data-gallery="images/portfolio/3.png" aria-label="Enlarge Project Portfolio Performance dashboard">
+              <img src="images/portfolio/3.png" alt="Power BI dashboard showing project benefit, cost and completion by type" loading="lazy" />
+              <span class="zoom"><i class="fas fa-expand"></i></span>
+            </button>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Power BI</span><span class="tag">DAX</span></div>
+              <h3>Project Portfolio Performance</h3>
+              <p>Tracks 874M in benefit against 412M in cost, with completion by project type, cost by department and status across quarters.</p>
+            </div>
+          </article>
+
+          <article class="project" data-cat="powerbi">
+            <button class="project-thumb" type="button" data-gallery="images/portfolio/4.png" aria-label="Enlarge Data Professional Survey dashboard">
+              <img src="images/portfolio/4.png" alt="Power BI dashboard analysing a survey of data professionals" loading="lazy" />
+              <span class="zoom"><i class="fas fa-expand"></i></span>
+            </button>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Power BI</span><span class="tag">Survey Analysis</span></div>
+              <h3>Data Professional Survey Analysis</h3>
+              <p>A three-page report on data professionals' roles, career switches, education levels and how hard they find breaking into data.</p>
+            </div>
+          </article>
+
+          <!-- Tableau -->
+          <article class="project" data-cat="tableau">
+            <button class="project-thumb" type="button" data-gallery="images/portfolio/5.png" aria-label="Enlarge Orders Analysis dashboard">
+              <img src="images/portfolio/5.png" alt="Tableau dashboard with a world map of order quantity, revenue by category and monthly revenue" loading="lazy" />
+              <span class="zoom"><i class="fas fa-expand"></i></span>
+            </button>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Tableau</span><span class="tag">Geo Analysis</span></div>
+              <h3>Global Orders Analysis</h3>
+              <p>Revenue of 1.35M across categories and countries, with quarterly order trends, monthly revenue and supplier roles.</p>
+              <div class="project-links"><a href="https://github.com/AsmaRadwan/Tableau-Dashboards" target="_blank" rel="noopener"><i class="fab fa-github"></i> Tableau repo</a></div>
+            </div>
+          </article>
+
+          <!-- Excel -->
+          <article class="project" data-cat="excel">
+            <button class="project-thumb" type="button" data-gallery="images/portfolio/8.png" aria-label="Enlarge Campaign Performance dashboard">
+              <img src="images/portfolio/8.png" alt="Excel dashboard of marketing campaign spend, revenue, ROAS, ROI and channel conversion rates" loading="lazy" />
+              <span class="zoom"><i class="fas fa-expand"></i></span>
+            </button>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Excel</span><span class="tag">Marketing</span><span class="tag">ROI</span></div>
+              <h3>Campaign Performance Overview</h3>
+              <p>811 campaigns across 6 channels (Jan 2024 – Jun 2025): spend vs. revenue, ROAS, ROI, CPA and conversion rate by channel for a digital-marketing agency.</p>
+            </div>
+          </article>
+
+          <article class="project" data-cat="excel">
+            <button class="project-thumb" type="button" data-gallery="images/portfolio/6.png,images/portfolio/7.png" aria-label="Enlarge Grocery Sales Analysis dashboards">
+              <img src="images/portfolio/6.png" alt="Excel dashboard analysing grocery sales by city, gender and discount" loading="lazy" />
+              <span class="zoom"><i class="fas fa-images"></i></span>
+            </button>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Excel</span><span class="tag">Pivot Tables</span><span class="tag">2 dashboards</span></div>
+              <h3>Grocery Sales Analysis</h3>
+              <p>Two linked dashboards covering 4.3B in sales: top cities, revenue vs. discount correlation, allergy categories and top products.</p>
+            </div>
+          </article>
+
+          <article class="project" data-cat="excel">
+            <button class="project-thumb" type="button" data-gallery="images/portfolio/2.png" aria-label="Enlarge Goodreads dashboard">
+              <img src="images/portfolio/2.png" alt="Excel dashboard of Goodreads book ratings, reviews and top authors" loading="lazy" />
+              <span class="zoom"><i class="fas fa-expand"></i></span>
+            </button>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Excel</span><span class="tag">NTI</span></div>
+              <h3>Goodreads Book Reviews</h3>
+              <p>Star-rating distribution, publication trends, top-reviewed books and author popularity across 11.8K books.</p>
+              <div class="project-links"><a href="https://github.com/AsmaRadwan/GoodReads-Project" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a></div>
+            </div>
+          </article>
+
+          <article class="project" data-cat="excel">
+            <button class="project-thumb" type="button" data-gallery="images/portfolio/1.png" aria-label="Enlarge Vrinda Store dashboard">
+              <img src="images/portfolio/1.png" alt="Excel dashboard of Vrinda Store 2022 sales by month, channel, gender and state" loading="lazy" />
+              <span class="zoom"><i class="fas fa-expand"></i></span>
+            </button>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Excel</span><span class="tag">Retail</span></div>
+              <h3>Vrinda Store 2022 Sales</h3>
+              <p>21M in annual sales broken down by month, channel, age group, gender, order status and top 10 states.</p>
+            </div>
+          </article>
+
+          <article class="project" data-cat="excel">
+            <div class="project-cover" aria-hidden="true"><i class="fas fa-school"></i></div>
+            <div class="project-body">
+              <div class="project-tags"><span class="tag">Excel</span><span class="tag">KPIs</span></div>
+              <h3>Educational KPIs Dashboard</h3>
+              <p>An interactive dashboard tracking student attendance, grade distribution and course-completion rates.</p>
+              <div class="project-links"><a href="https://github.com/AsmaRadwan/Educational-KPIs-Project" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section id="education">
+      <div class="container">
+        <span class="eyebrow">Learning</span>
+        <h2 class="section-title">Education &amp; certifications</h2>
+        <p class="section-lead">A strong academic base plus industry training programs.</p>
+        <div class="edu-grid">
+          <div class="panel reveal">
+            <h3><i class="fas fa-university"></i> Education &amp; training</h3>
+            <div class="list-row">
+              <div>
+                <strong>B.Sc. Computer Science &amp; Artificial Intelligence</strong>
+                <small>Pharos University · Data Science Major</small>
+                <div class="gpa">GPA 3.97 / 4.0</div>
+              </div>
+              <time>2022 – 2026</time>
+            </div>
+            <div class="list-row">
+              <div><strong>Data Analyst Trainee</strong><small>Digital Egypt Pioneers Initiative (DEPI)</small></div>
+              <time>Jun – Dec 2025</time>
+            </div>
+            <div class="list-row">
+              <div><strong>Data Analyst Trainee</strong><small>National Telecommunication Institute (NTI)</small></div>
+              <time>Jun – Aug 2025</time>
+            </div>
+            <div class="list-row">
+              <div><strong>Deep Learning Trainee</strong><small>European Educational Group</small></div>
+              <time>Jul – Sep 2024</time>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <h3><i class="fas fa-certificate"></i> Certifications</h3>
+            <div class="list-row"><div><strong>Data Analytics Specialist</strong><small>Google · DEPI</small></div><time>Dec 2025</time></div>
+            <div class="list-row"><div><strong>Data Analysis</strong><small>National Telecommunication Institute (NTI)</small></div><time>Sep 2025</time></div>
+            <div class="list-row"><div><strong>Forward Program: Soft Skills</strong><small>McKinsey &amp; Company</small></div><time>Dec 2024</time></div>
+            <div class="list-row"><div><strong>Deep Learning</strong><small>European Educational Group</small></div><time>Sep 2024</time></div>
+            <div class="list-row"><div><strong>Data Analytics</strong><small>IBM</small></div><time>Aug 2024</time></div>
+            <div class="list-row"><div><strong>Microsoft Power BI Desktop</strong><small>AITB</small></div><time>Dec 2023</time></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section-alt">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title">Let's work together</h2>
+        <p class="section-lead">Have a project, a role or a question? Send a message and I'll get back to you.</p>
+
+        <div class="contact-grid">
+          <div class="contact-cards">
+            <a class="contact-card" href="mailto:asma.magdy.hamed@gmail.com">
+              <span class="icon"><i class="fas fa-envelope"></i></span>
+              <span><small>Email</small><strong>asma.magdy.hamed@gmail.com</strong></span>
+            </a>
+            <a class="contact-card" href="https://wa.me/201121380001" target="_blank" rel="noopener">
+              <span class="icon"><i class="fab fa-whatsapp"></i></span>
+              <span><small>WhatsApp</small><strong>+20 112 138 0001</strong></span>
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/asmaradwan" target="_blank" rel="noopener">
+              <span class="icon"><i class="fab fa-linkedin-in"></i></span>
+              <span><small>LinkedIn</small><strong>in/asmaradwan</strong></span>
+            </a>
+            <a class="contact-card" href="https://github.com/AsmaRadwan" target="_blank" rel="noopener">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span><small>GitHub</small><strong>github.com/AsmaRadwan</strong></span>
+            </a>
+            <div class="contact-card">
+              <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+              <span><small>Location</small><strong>Alexandria, Egypt · Remote-friendly</strong></span>
+            </div>
+          </div>
+
+          <!-- Sends to your inbox via FormSubmit.co (free, no server needed). -->
+          <form class="form" id="contactForm" action="https://formsubmit.co/ajax/asma.magdy.hamed@gmail.com" method="POST">
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" />
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input id="subject" name="_subject" type="text" required />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i> Send message</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="year">2026</span> Asma Radwan. Built with care in Alexandria.</span>
+      <a href="#home">Back to top <i class="fas fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- Image lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Project screenshot">
+    <img src="" alt="" />
+    <div class="lightbox-bar">
+      <h3></h3>
+      <div class="lightbox-nav">
+        <button class="icon-btn" type="button" data-prev aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <button class="icon-btn" type="button" data-next aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+        <button class="icon-btn" type="button" data-close aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
