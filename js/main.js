@@ -3,20 +3,24 @@
   const root = document.documentElement;
 
   /* ---------- Theme (light / dark) ---------- */
-  const themeBtn = document.getElementById("themeToggle");
+  const themeBtns = document.querySelectorAll("[data-theme-set]");
   const setTheme = (t) => {
     root.setAttribute("data-theme", t);
     localStorage.setItem("theme", t);
-    themeBtn.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    themeBtns.forEach((b) => b.setAttribute("aria-pressed", b.dataset.themeSet === t));
     document.querySelector('meta[name="theme-color"]').setAttribute("content", t === "dark" ? "#0d0f14" : "#fbfaf9");
   };
   setTheme(root.getAttribute("data-theme") || "light");
-  themeBtn.addEventListener("click", () => setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark"));
+  themeBtns.forEach((b) =>
+    b.addEventListener("click", () => {
+      localStorage.setItem("theme-chosen", "1");
+      setTheme(b.dataset.themeSet);
+    })
+  );
   // Follow the OS setting until the visitor picks a theme themselves
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
     if (!localStorage.getItem("theme-chosen")) setTheme(e.matches ? "dark" : "light");
   });
-  themeBtn.addEventListener("click", () => localStorage.setItem("theme-chosen", "1"));
 
   /* ---------- Mobile menu ---------- */
   const menuBtn = document.getElementById("menuToggle");
